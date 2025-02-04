@@ -1,0 +1,53 @@
+
+
+/* Reflective Button Base Style */
+.reflective-btn, .reflective-btn-brand {
+  position: relative;
+  display: inline-block;
+  padding: auto;
+  overflow: hidden;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hover Effect: Change background on hover */
+.reflective-btn:hover {
+  scale: 0.98;
+}
+
+/* Reflective Shine */
+.reflective-btn::before, .reflective-btn-brand::before {
+  content: "";
+  position: absolute;
+  top: -50%; /* Start above the button */
+  left: -50%;
+  width: 200%; /* Make it cover the whole button */
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0.6; /* Make the reflection subtle */
+  transform: rotate(-45deg);
+  pointer-events: none;
+  animation: shine-animation 3.5s infinite ease-in-out;
+}
+
+/* Keyframes for Moving Shine */
+@keyframes shine-animation {
+  0% {
+    transform: translateX(-100%) rotate(-45deg); /* Start from the left */
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(100%) rotate(-45deg); /* Move to the right */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%) rotate(-45deg); /* Return to the left */
+    opacity: 0.5;
+  }
+}
