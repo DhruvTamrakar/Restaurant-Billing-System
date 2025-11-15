@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Menu() {
     const Menus = ["Indian Food", "Fast Food", "Desserts", "Drinks", "Chinese Food", "Pizza", "Indian Snacks"];

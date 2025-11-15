@@ -1,4 +1,4 @@
-export {IndianFood, Desserts, FastFood, Drinks, ChineseFood, Pizza, IndianSnacks}
+
 
  
 const IndianSnacks = [
@@ -118,3 +118,4 @@ const Drinks = [
         { "key": "12", "name": "Pasta Alfredo", "price": 200 }
     ]
 
+export {IndianFood, Desserts, FastFood, Drinks, ChineseFood, Pizza, IndianSnacks}

@@ -17,12 +17,6 @@ export default function PaymentMode() {
       default:
         return [];
     }
-  return (
-    <div >
-      {
-        
-      }
-    </div>
-  )
+
 }
 

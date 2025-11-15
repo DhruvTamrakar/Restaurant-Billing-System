@@ -6,6 +6,7 @@ export default function Menus() {
    
     
     const params = useParams()
+   
 
     function getDataByParams(params){
         switch (params.MenuName) {
@@ -28,7 +29,6 @@ export default function Menus() {
         }
     }    
     const Menu = getDataByParams(params)   
-         
 
     const [listItems, setListItems] = useState([])
     const [totalOrder, settotal] = useState(0)
