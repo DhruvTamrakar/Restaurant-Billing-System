@@ -1,25 +1,34 @@
-import React from 'react'
-
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import { getCategories } from '../Services/api';
 
 export default function Menu() {
-    const Menus = ["Indian Food", "Fast Food", "Desserts", "Drinks", "Chinese Food", "Pizza", "Indian Snacks"];
+  const [categories, setCategories] = useState([]);
 
-    return (
-        <div >
-            <div className=' border border-3 border-warning gap-1 d-flex px-2'>
-                {
-                    Menus.map((value) => {
-                        return (
-                            <Link className=' fs-5' key={value} to={`/Menu/${value}`}>
-                                <button type='button' className='reflective-btn btn btn-outline-warning m-1 text-black fw-bold fs-5'>{value}</button>
-                                </Link>
-                        )
+  useEffect(() => {
+    async function fetchCategories() {
+      const data = await getCategories();
+      setCategories(data);
+    }
+    fetchCategories();
+  }, []);
 
-                    })
-                }
-            </div>
+  return (
+    <div className="container my-3">
+      <div className='d-flex flex-wrap gap-2 justify-content-center mb-3'>
+        {categories.map((cat) => (
+          <Link key={cat.categoryId} to={`/Menu/${cat.categoryName}`}>
+            <button
+              type='button'
+              className='btn btn-outline-warning text-black fw-bold fs-5 reflective-btn px-3 py-2'
+            >
+              {cat.categoryName}
+            </button>
+          </Link>
+        ))}
+      </div>
 
-        </div>
-    )
+      <Outlet />
+    </div>
+  );
 }

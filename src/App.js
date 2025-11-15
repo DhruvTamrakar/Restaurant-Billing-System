@@ -1,5 +1,4 @@
 import './App.css';
-// import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import Menu from './Components/Menu';
 import Navbar from './Components/Navbar';
@@ -17,7 +16,7 @@ function App() {
     },
     {
       path: "/Menu",
-      element: <><Navbar /><Menu /><Menus /></>,
+      element: <><Navbar /><Menu /></>,
       children: [
         {
           path: ":MenuName",
@@ -40,37 +39,7 @@ function App() {
       element: <><Navbar /><Contact /></>,
     },
   ]);
-  // const router = createBrowserRouter([
-  //   {
-  //     path: '/',
-  //     element: <><Navbar /><Home /></>
-  //   },
-  //   {
-  //     path: "/Menu",
-  //     element: <><Navbar /><Menu /><Menus /></>,
-  //     children: [
-  //       {
-  //         path: "/Menu/:MenuName",
-  //         element: <><Menus /></>
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     path: '/Menu/:MenuName/Payment',
-  //     element: <><Navbar /><PaymentSection /></>,
-  //     children: [
-  //       {
-  //         path: "/Menu/:MenuName/Payment/:PaymentModes",
-  //         element: <><PaymentMode /></>
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     path: "/Contact",
-  //     element: <><Navbar/><Contact/></>
-  //   }
 
-  // ])
   return (
 
     <div className=''>

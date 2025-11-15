@@ -1,22 +1,26 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function CodMode() {
-    const handleConfirm = () => {
-        alert("Order placed! Please pay in cash upon delivery.");
+  const handleConfirm = () => {
+    alert("Order placed! Please pay in cash upon delivery.");
+  };
 
-      };
-    
   return (
-    <div>
-      <div className="container text-center ">
-      <div className='fw-bold fs-4 mt-3'>Cash on Delivery</div>
-      <p className=''>You have chosen to pay in cash when your order is delivered.</p>
-      <button className="btn btn-warning reflective-btn rounded mx-auto " onClick={handleConfirm}>
-        <Link className='nav-link fs-5' to="/">Confirm Cash on Delivery</Link>
-      </button>
+    <div className="container my-5 d-flex justify-content-center">
+      <div className="text-center border border-warning border-3 rounded p-4 shadow-sm" style={{ maxWidth: '500px', width: '100%' }}>
+        <h3 className="fw-bold fs-4 mb-3">Cash on Delivery</h3>
+        <p className="mb-4">
+          You have chosen to pay in cash when your order is delivered.
+        </p>
+        <Link
+          to="/"
+          className="btn btn-warning w-100 fw-bold reflective-btn"
+          onClick={handleConfirm}
+        >
+          Confirm Cash on Delivery
+        </Link>
+      </div>
     </div>
-    </div>
-  )
+  );
 }
-

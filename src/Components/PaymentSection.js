@@ -1,36 +1,38 @@
-import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
-
+import React from 'react';
+import { Link, Outlet, useParams } from 'react-router-dom';
 
 export default function PaymentSection() {
-  const { MenuName } = useParams()
-
-  const PaymentModes = ["UPI Pay", "QR Scanner", "Cash on Delivery"]
+  const { MenuName } = useParams();
+  const PaymentModes = ["UPI Pay", "QR Scanner", "Cash on Delivery"];
 
   return (
-    <div className=''>
-      <div className="container border d-flex gap-1 p-2 rounded border-3 border-warning my-3">
-        <div className='col-4 mx-auto text-center border rounded border-warning py-1 px-2'>
-        <div className='fw-bold border-bottom border-warning border-2 my-1 '>Payment Mode</div>
-          {
-            PaymentModes.map((item, index) => {
-              return (
-
-                <ul key={index} className='list-unstyled'>
-                  <Link className='nav-link d-flex place-item-center' to={`/Menu/${MenuName}/Payment/${item}`}  >
-                    <li  className='col-12 border border-3 bg-warning mx-auto rounded reflective-btn p-auto m-auto'>{item}</li>
+    <div className="container my-3">
+      <div className="row g-3">
+        <div className="col-12 col-md-4">
+          <div className="border border-warning rounded p-2 h-100">
+            <div className="fw-bold border-bottom border-warning border-2 mb-2 pb-1 text-center">
+              Payment Mode
+            </div>
+            <ul className="list-unstyled d-flex flex-column gap-2">
+              {PaymentModes.map((mode, index) => (
+                <li key={index}>
+                  <Link to={`/Menu/${MenuName}/Payment/${mode}`} className="text-decoration-none">
+                    <div className="border border-3 rounded container-sm bg-warning text-center fw-bold py-2 reflective-btn">
+                      {mode}
+                    </div>
                   </Link>
-
-                </ul>
-              )
-            })
-          }
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className='col-6 border border-warning rounded mx-auto'>
-          <Outlet />
+
+        <div className="col-12 col-md-8">
+          <div className="border border-warning rounded p-2 h-100">
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
