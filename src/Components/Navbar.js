@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light border-bottom border-warning border-2 py-2 mousehover">
+    <nav className="navbar navbar-expand-lg navbar-light  border-bottom border-warning border-2 py-2 mousehover">
       <div className="container-fluid">
         {/* Brand */}
         <Link className="navbar-brand fw-bold fs-2 reflective-btn-brand mx-lg-5" to="/">
