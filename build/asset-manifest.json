@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Restaurant-Billing-System/static/css/main.a87d7e52.css",
-    "main.js": "/Restaurant-Billing-System/static/js/main.589e051a.js",
+    "main.js": "/Restaurant-Billing-System/static/js/main.2d4cfd7a.js",
     "static/js/453.e0684c35.chunk.js": "/Restaurant-Billing-System/static/js/453.e0684c35.chunk.js",
     "static/media/img1.jpg": "/Restaurant-Billing-System/static/media/img1.5e969335692c4cf0217a.jpg",
     "static/media/img2.jpg": "/Restaurant-Billing-System/static/media/img2.09d935622f0179a55fda.jpg",
@@ -9,11 +9,11 @@
     "static/media/Payment.png": "/Restaurant-Billing-System/static/media/Payment.1dd96947b69e861aa648.png",
     "index.html": "/Restaurant-Billing-System/index.html",
     "main.a87d7e52.css.map": "/Restaurant-Billing-System/static/css/main.a87d7e52.css.map",
-    "main.589e051a.js.map": "/Restaurant-Billing-System/static/js/main.589e051a.js.map",
+    "main.2d4cfd7a.js.map": "/Restaurant-Billing-System/static/js/main.2d4cfd7a.js.map",
     "453.e0684c35.chunk.js.map": "/Restaurant-Billing-System/static/js/453.e0684c35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a87d7e52.css",
-    "static/js/main.589e051a.js"
+    "static/js/main.2d4cfd7a.js"
   ]
 }
