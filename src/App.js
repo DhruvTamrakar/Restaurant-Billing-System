@@ -7,12 +7,13 @@ import PaymentSection from './Components/PaymentSection';
 import Menus from './Components/Menus';
 import PaymentMode from './Components/PaymentMode'
 import Contact from './Components/Contact';
+import Footer from './Components/Footer';
 
 function App() {
   const router = createHashRouter([
     {
       path: "/",
-      element: <><Navbar /><Home /></>,
+      element: <><Navbar /><Home /><Footer /></>,
     },
     {
       path: "/Menu",
@@ -20,13 +21,13 @@ function App() {
       children: [
         {
           path: ":MenuName",
-          element: <Menus />,
+          element:<><Menus /><Footer /></> ,
         },
       ],
     },
     {
       path: "/Menu/:MenuName/Payment",
-      element: <><Navbar /><PaymentSection /></>,
+      element: <><Navbar /><PaymentSection /><Footer /></>,
       children: [
         {
           path: ":PaymentModes",
@@ -36,7 +37,7 @@ function App() {
     },
     {
       path: "/Contact",
-      element: <><Navbar /><Contact /></>,
+      element: <><Navbar /><Contact /><Footer /></>,
     },
   ]);
 

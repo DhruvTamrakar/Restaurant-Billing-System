@@ -11,10 +11,10 @@ const UpiPay = () => {
 
   return (
     <div className="container text-center py-3">
-      <div className='fw-bold fs-4 mt-2'>UPI Payment</div>
+      <div className='fw-bold fs-4 mt-2 reflective-btn-brand'>UPI Payment</div>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="upiId" className="form-label ">
+          <label htmlFor="upiId" className="form-label text-warning">
             Enter your UPI ID
           </label>
           <input
@@ -27,8 +27,8 @@ const UpiPay = () => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-warning reflective-btn">
-          <Link className='nav-link fs-5' to="/">Pay with UPI</Link>
+        <button type="submit" className="btn btn-dark reflective-btn">
+          <Link className='nav-link fs-5 text-dark' to="/">Pay with UPI</Link>
         </button>
       </form>
     </div>

@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <div className="container  my-4">
+    <div className="container  my-4 text-light">
       <form className="mx-auto" style={{ maxWidth: '600px' }}>
         <div className="border border-warning border-3 rounded-4 p-4 shadow-sm">
-          <h2 className="text-center mb-4 fw-bold">Contact Us</h2>
+          <h2 className="text-center mb-4 fw-bold reflective-btn text-warning">Contact Us</h2>
 
          
           <div className="mb-3">
@@ -43,7 +43,7 @@ export default function Contact() {
           
           <button
             type="submit"
-            className="btn btn-outline-warning w-100 fw-bold reflective-btn"
+            className="btn btn-warning w-100 fw-bold reflective-btn text-dark"
           >
             Submit
           </button>

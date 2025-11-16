@@ -1,19 +1,39 @@
-
-
+body{
+  background-color: black;
+}
+.bgwarn{
+  background-color: #ffc107;
+}
 /* Reflective Button Base Style */
 .reflective-btn, .reflective-btn-brand {
   position: relative;
   display: inline-block;
   padding: auto;
   overflow: hidden;
-  color: black;
+  color: #ffc107;
   font-weight: bold;
   cursor: pointer;
 }
-
+.reflective-menus{
+    position: relative;
+  display: inline-block;
+  padding: auto;
+  overflow: hidden;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  background-color:white;
+}
+.hovereffect:hover{
+  scale: 0.98;
+}
+.btnhover:hover{
+  color:black;
+}
 /* Hover Effect: Change background on hover */
 .reflective-btn:hover {
   scale: 0.98;
+  color: black;
 }
 
 /* Reflective Shine */
@@ -51,3 +71,18 @@
     opacity: 0.5;
   }
 }
+.glass-nav {
+  background: rgba(255, 255, 255, 0.15); /* Transparent white */
+  backdrop-filter: blur(10px);           /* Blur effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Optional border */
+}
+
+.nav-link {
+  color: #ffc107 !important;
+}
+
+.navbar-brand {
+  color: #ffc107 !important; /* Warning color */
+}
+

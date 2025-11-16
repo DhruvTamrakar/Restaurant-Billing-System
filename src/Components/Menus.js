@@ -34,7 +34,7 @@ export default function Menus() {
               {Menu.map(item => (
                 <li key={item.foodId} className="mb-2">
                   <button 
-                    className='w-100 d-flex justify-content-between align-items-center border text-start bg-white rounded p-2 reflective-btn'
+                    className='w-100 d-flex justify-content-between align-items-center border text-start  rounded p-2 reflective-menus hovereffect'
                     onClick={() => clickHandle(item)}
                   >
                     <div className='fs-5 fw-bold'>{item.itemKey}.</div>

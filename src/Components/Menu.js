@@ -20,7 +20,7 @@ export default function Menu() {
           <Link key={cat.categoryId} to={`/Menu/${cat.categoryName}`}>
             <button
               type='button'
-              className='btn btn-outline-warning text-black fw-bold fs-5 reflective-btn px-3 py-2'
+              className='btn btn-outline-warning  fw-bold fs-5 reflective-btn px-3 py-2'
             >
               {cat.categoryName}
             </button>

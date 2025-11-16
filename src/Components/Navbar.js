@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light  border-bottom border-warning border-2 py-2 mousehover">
+    <nav className="navbar navbar-expand-lg navbar-light position-sticky top-0 z-3 glass-nav  border-bottom border-warning border-2 py-2 mousehover">
       <div className="container-fluid">
         {/* Brand */}
-        <Link className="navbar-brand fw-bold fs-2 reflective-btn-brand mx-lg-5" to="/">
+        <Link className="navbar-brand fw-bold fs-2 reflective-btn-brand mx-lg-5 rounded" to="/">
           Gold Restaurant
         </Link>
 
         {/* Toggle button for mobile */}
         <button
-          className="navbar-toggler"
+          className="navbar-toggler bgwarn btn-warning btn"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -20,12 +20,12 @@ export default function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon btn-warning btn  "></span>
         </button>
 
         {/* Navbar links */}
         <div className="collapse navbar-collapse mx-lg-5 text-center" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav ms-auto text-dark">
             <li className="nav-item mx-2">
               <Link className="nav-link fs-5" to="/">Home</Link>
             </li>

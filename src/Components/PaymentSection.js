@@ -10,14 +10,14 @@ export default function PaymentSection() {
       <div className="row g-3">
         <div className="col-12 col-md-4">
           <div className="border border-warning rounded p-2 h-100">
-            <div className="fw-bold border-bottom border-warning border-2 mb-2 pb-1 text-center">
+            <div className="fw-bold border-bottom border-warning border-2 mb-2 pb-1 text-center text-warning">
               Payment Mode
             </div>
             <ul className="list-unstyled d-flex flex-column gap-2">
               {PaymentModes.map((mode, index) => (
                 <li key={index}>
                   <Link to={`/Menu/${MenuName}/Payment/${mode}`} className="text-decoration-none">
-                    <div className="border border-3 rounded container-sm bg-warning text-center fw-bold py-2 reflective-btn">
+                    <div className="border border-3 rounded container-sm text-warning text-center fw-bold py-2 reflective-btn">
                       {mode}
                     </div>
                   </Link>

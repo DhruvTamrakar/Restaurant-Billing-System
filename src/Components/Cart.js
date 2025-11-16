@@ -9,9 +9,9 @@ export default function Cart({ listItems, totalOrder, MenuName }) {
                 Your Order
             </div>
 
-            <ul className="list-unstyled">
+            <ul className="list-unstyled glass-nav text-warning">
                 {listItems.map((item, index) => (
-                    <li className='col-12 border d-flex mx-auto px-auto rounded' key={index}>
+                    <li className='col-12 border-bottom py-2 d-flex mx-auto px-auto rounded ' key={index}>
                         {/* Use item.itemName from backend */}
                         <div className='col-5 mx-auto px-auto py-1 fs-5'>{item.itemName}</div>
                         <div className='col-1 mx-auto px-auto py-1 fs-5'>{icon}</div>
