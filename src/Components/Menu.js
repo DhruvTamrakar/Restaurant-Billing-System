@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { getCategories } from '../Services/api';
 import { StaticCategories } from '../Components/Foods';
-import Layout from './Layout';
 
 export default function Menu() {
   const [categories, setCategories] = useState([]);
