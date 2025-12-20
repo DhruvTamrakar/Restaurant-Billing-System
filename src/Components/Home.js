@@ -1,13 +1,28 @@
 import React from 'react';
 import img1 from '../Media/img1.jpg';
-import img2 from '../Media/img2.jpg';
+import img2 from '../Media/img2.png';
 import img3 from '../Media/img3.jpg';
 import drinkimg from '../Media/drinkimg.png';
 import breakfastimg from '../Media/breakfastimg.png';
 import maindishimg from '../Media/maindishimg.png';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
 
 export default function Home() {
+
+
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
   const imageColl = [{
             img: breakfastimg,
             title: 'Breakfast'
@@ -20,6 +35,13 @@ export default function Home() {
           }];
   return (
     <div className="container-fluid my-3 px-0">
+      {loading && (
+        <div className='page-loader'>
+        <div className="spinner-border text-warning my-5" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+        </div>
+      )}
       {/* Carousel */}
       <div
         id="carouselExample"
@@ -28,7 +50,7 @@ export default function Home() {
         data-bs-interval="3000"
         data-bs-pause="false"
       >
-        <div className="carousel-inner">
+        <div className="carousel-inner" style={{maxHeight:"100%"}}>
           {[img1, img2, img3].map((img, index) => (
             <div
               key={index}

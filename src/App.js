@@ -1,79 +1,63 @@
 import './App.css';
 import { createHashRouter, RouterProvider } from "react-router-dom";
-import { useEffect, useState } from "react";
 import Menu from './Components/Menu';
-import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import PaymentSection from './Components/PaymentSection';
 import Menus from './Components/Menus';
-import PaymentMode from './Components/PaymentMode'
+import PaymentMode from './Components/PaymentMode';
 import Contact from './Components/Contact';
-import Footer from './Components/Footer';
+import Layout from './Components/Layout';
 
 function App() {
+
   const router = createHashRouter([
     {
       path: "/",
-      element: <><Navbar /><Home /><Footer /></>,
+      element: (
+        <Layout>
+          <Home />
+        </Layout>
+      ),
     },
     {
       path: "/Menu",
-      element: <><Navbar /><Menu /><Footer /></>,
+      element: (
+        <Layout>
+          <Menu />
+        </Layout>
+      ),
       children: [
         {
           path: ":MenuName",
-          element:<><Menus /></> ,
+          element: <Menus />,
         },
       ],
     },
     {
       path: "/Menu/:MenuName/Payment",
-      element: <><Navbar /><PaymentSection /><Footer /></>,
+      element: (
+        <Layout>
+          <PaymentSection />
+        </Layout>
+      ),
       children: [
         {
           path: ":PaymentModes",
-          element:<><PaymentMode /></>,
+          element: <PaymentMode />,
         },
       ],
     },
     {
       path: "/Contact",
-      element: <><Navbar /><Contact /><Footer /></>,
+      element: (
+        <Layout>
+          <Contact />
+        </Layout>
+      ),
     },
   ]);
-  const [show, setShow] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(false);
-    }, 3000); // 3 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!show) return null;
-
-  const styleEle = {
-   position: "fixed",
-    top: 0,
-    left: 0,
-    minHeight: "100vh",
-    minWidth: "100%",
-    backgroundColor: "black",
-    color: "white",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 1000,
-  }
-  return (
-    
-  <div className=''>
-      <RouterProvider router={router} />
-      <div style={styleEle}>loading...</div>
-    </div>
-
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

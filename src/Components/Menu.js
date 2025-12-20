@@ -2,9 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { getCategories } from '../Services/api';
 import { StaticCategories } from '../Components/Foods';
+import Layout from './Layout';
 
 export default function Menu() {
   const [categories, setCategories] = useState([]);
+
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
 
   useEffect(() => {
     async function fetchCategories() {
@@ -31,6 +44,13 @@ export default function Menu() {
  
   return (
     <div className="container my-3 " style={{minHeight: "50vh"}}>
+       {loading && (
+        <div className='page-loader'>
+        <div className="spinner-border text-warning my-5" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+        </div>
+      )}
       <div className="d-flex flex-wrap gap-2 justify-content-center mb-3">
         {categories.map((cat) => (
           <Link key={cat.categoryId} to={`/Menu/${cat.categoryName}`}>

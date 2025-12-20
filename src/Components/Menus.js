@@ -10,6 +10,8 @@ export default function Menus() {
   const [listItems, setListItems] = useState([]);
   const [totalOrder, setTotal] = useState(0);
 
+
+ 
 useEffect(() => {
   async function fetchMenu() {
     try {
@@ -46,7 +48,9 @@ useEffect(() => {
       <div className="row col-12 d-flex justify-content-center align-item-center ">
         <div className="col-12 col-lg-6  mb-3">
           <div className='p-2 border  border-warning rounded'>
+        
             <div className="text-center bg-warning fs-5 mx-auto fw-bold border my-1 rounded">{MenuName}</div>
+            
             <ul className="list-unstyled">
               {Menu.map(item => (
                 <li key={item.itemKey} className="mb-2 ">
