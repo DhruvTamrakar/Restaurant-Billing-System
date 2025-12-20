@@ -8,7 +8,7 @@ export const getCategories = async () => {
     const res = await axios.get(`${API_URL}/Category`);
     return res.data;
   } catch (err) {
-    console.error(err);
+    console.error("Hello    "+err);
     return [];
   }
 };
@@ -19,7 +19,7 @@ export const getFoodByCategory = async (categoryName) => {
     const res = await axios.get(`${API_URL}/Food/category/${categoryName}`);
     return res.data;
   } catch (err) {
-    console.error(err);
+    console.error("hello"+err);
     return [];
   }
 };

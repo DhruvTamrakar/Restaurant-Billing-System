@@ -6,8 +6,8 @@ export default function PaymentSection() {
   const PaymentModes = ["UPI Pay", "QR Scanner", "Cash on Delivery"];
 
   return (
-    <div className="container my-3">
-      <div className="row g-3">
+    <div className="container my-3 d-flex justify-content-center " style={{minHeight: "50vh"}}>
+      <div className="row g-3 col-12">
         <div className="col-12 col-md-4">
           <div className="border border-warning rounded p-2 h-100">
             <div className="fw-bold border-bottom border-warning border-2 mb-2 pb-1 text-center text-warning">

@@ -13,26 +13,26 @@ export default function Cart({ listItems, totalOrder, MenuName }) {
                 {listItems.map((item, index) => (
                     <li className='col-12 border-bottom py-2 d-flex mx-auto px-auto rounded ' key={index}>
                         {/* Use item.itemName from backend */}
-                        <div className='col-5 mx-auto px-auto py-1 fs-5'>{item.itemName}</div>
-                        <div className='col-1 mx-auto px-auto py-1 fs-5'>{icon}</div>
-                        <div className='col-2 mx-auto px-auto py-1 fs-5 text-end'>{item.price}.00$</div>
+                        <div className='col-5 mx-auto px-auto py-1 fs-lg-5  '>{item.itemName}</div>
+                        <div className='col-1 mx-auto px-auto py-1 fs-lg-5'>{icon}</div>
+                        <div className='col-2 mx-auto px-auto py-1 fs-lg-5 text-light text-end'>{item.price}.00$</div>
                     </li>
                 ))}
             </ul>
 
             {listItems.length !== 0 && (
                 <>
-                    <li className='col-11 border border-3 d-flex mx-auto my-1 px-auto bg-warning rounded position-sticky'>
-                        <div className='col-5 mx-auto px-auto py-1 fs-5 fw-bold'>Total Amount</div>
-                        <div className='col-1 mx-auto px-auto py-1 fs-5'>{icon}</div>
-                        <div className='col-2 mx-auto px-auto py-1 fs-5 text-end'>{totalOrder}.00$</div>
+                    <li className='col-11 text-light  d-flex mx-auto my-1 px-auto  rounded position-sticky'>
+                        <div className=' mx-auto px-auto py-1 fs-5 fw-bold'>Total Amount</div>
+                        <div className=' mx-auto px-auto py-1 fs-5'>{icon}</div>
+                        <div className=' mx-auto px-auto  py-1 fs-5 text-end'>{totalOrder}.00$</div>
                     </li>
 
                     <Link 
                         to={`/Menu/${MenuName}/Payment`} 
                         className='col-12 border border-3 d-flex my-1 nav-link bg-warning rounded reflective-btn'
                     >
-                        <div className='col-5 mx-auto px-auto py-1 fs-5 fw-bold text-black'>
+                        <div className='col-lg-5 mx-auto px-auto py-1 fs-5 fw-bold text-black'>
                             Go For Payment
                         </div>
                     </Link>

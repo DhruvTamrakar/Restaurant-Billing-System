@@ -8,6 +8,16 @@ import maindishimg from '../Media/maindishimg.png';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
+  const imageColl = [{
+            img: breakfastimg,
+            title: 'Breakfast'
+          },{
+            img: maindishimg,
+            title: 'Main Dishes'
+          },{
+            img: drinkimg,
+            title: 'Drinks'
+          }];
   return (
     <div className="container-fluid my-3 px-0">
       {/* Carousel */}
@@ -61,16 +71,7 @@ export default function Home() {
       {/* Cards Section */}
       <div className="container">
         <div className="row g-4 justify-content-center ">
-          {[{
-            img: breakfastimg,
-            title: 'Breakfast'
-          },{
-            img: maindishimg,
-            title: 'Main Dishes'
-          },{
-            img: drinkimg,
-            title: 'Drinks'
-          }].map((item, index) => (
+          {imageColl.map((item, index) => (
             <div key={index} className="col-12 col-sm-6 col-md-4 text-center ">
               <div className="card border-0 shadow-sm hovereffect h-100 glass-nav">
                 <img src={item.img} className="card-img-top rounded rounded-2 p-3" alt={item.title} />
